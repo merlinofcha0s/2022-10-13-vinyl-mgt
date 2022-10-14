@@ -1,1 +1,10 @@
-<app-single-vinyl [vinyl]="vinyl"></app-single-vinyl>
+<div class="row">
+  <div class="col-12">
+    <div class="d-flex m flex-wrap justify-content-between">
+      <div *ngFor="let vinyl of vinyls; index as i; odd as odd; even as even">
+        <app-single-vinyl class="border" [class.border-primary]="odd" [class.border-danger]="even"  [vinyl]="vinyl"></app-single-vinyl>
+        {{i}} / {{odd}} / {{even}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -22,6 +22,6 @@ export class SingleVinylComponent implements OnInit {
   }
 
   onReleaseDateChange(newReleaseDate: number) {
-    this.vinyl.releaseDate = newReleaseDate;
+    // this.vinyl.releaseDate = newReleaseDate;
   }
 }
