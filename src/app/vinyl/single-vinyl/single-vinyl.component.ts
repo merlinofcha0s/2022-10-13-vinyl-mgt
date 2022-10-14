@@ -16,4 +16,12 @@ export class SingleVinylComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  changeArtiste(): void {
+    this.vinyl.artiste = 'King of pop';
+  }
+
+  onReleaseDateChange(newReleaseDate: number) {
+    this.vinyl.releaseDate = newReleaseDate;
+  }
 }
