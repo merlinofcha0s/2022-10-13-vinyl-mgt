@@ -5,7 +5,7 @@
       <h3>{{vinyl.title}}<br><small>par {{vinyl.artiste}}</small></h3>
     </div>
     <div class="card-text">
-      <h5 class="bold">{{vinyl.releaseDate}}</h5>
+      <h5 class="bold">{{vinyl.releaseDate | date: 'YYYY-MM-dd'}}</h5>
     </div>
 <!--     <app-counting-buttons-->
 <!--      [releaseDate]="vinyl!.releaseDate"-->
