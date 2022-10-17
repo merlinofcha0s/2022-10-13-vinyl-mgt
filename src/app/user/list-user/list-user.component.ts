@@ -18,7 +18,7 @@ export class ListUserComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAll().pipe(
       filter(response => response.ok),
-      map(response => response.body)
+      map(response => response.body),
     ).subscribe((users) => {
       this.users = users;
     }, error => {

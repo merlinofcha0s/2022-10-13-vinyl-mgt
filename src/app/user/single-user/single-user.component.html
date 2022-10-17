@@ -14,5 +14,5 @@
   <div class="section" style="text-align: center">
     <a href="http://{{user.website}}" target="_blank">{{ user.website }}</a>
   </div>
-  <button class="btn btn-primary mt-2">Modifier</button>
+  <button [routerLink]="['edit', blockchainname, contractid, token]" class="btn btn-primary mt-2">Modifier</button>
 </div>
