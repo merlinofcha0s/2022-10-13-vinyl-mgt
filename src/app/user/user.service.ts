@@ -12,10 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<HttpResponse<Array<User>>> {
-    const headers = new HttpHeaders().set('Authorization', 'totototo');
-    const params = new HttpParams()
-      .set('chain', 'ethereum')
-    return this.http.get<Array<User>>(`${environment.baseUrl}/users`, {headers, params, observe: "response"});
+    return this.http.get<Array<User>>(`${environment.baseUrl}/users`, {observe: "response"});
   }
 
   public getOne(id: number): Observable<HttpResponse<User>> {
