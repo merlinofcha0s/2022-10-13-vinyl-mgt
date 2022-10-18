@@ -1,2 +1,33 @@
-<div>User id : {{ userId }}</div>
-<div>User name : {{ user!.name }}</div>
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <form (ngSubmit)="onEditUser()" [formGroup]="userFormGroup">
+      <div class="form-group mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name"
+               class="form-control" placeholder="Enter name" formControlName="name">
+      </div>
+      <div *ngIf="userFormGroup.get('name')!.dirty && userFormGroup.get('name')!.hasError('required')">
+        Un nom est obligatoire
+      </div>
+      <div  *ngIf="userFormGroup.get('name')!.dirty && userFormGroup.get('name')!.hasError('minlength')">
+        Le nom doit avoir 3 caractères minimum
+      </div>
+      <div class="form-group mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" formControlName="username">
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" id="email" name="email" class="form-control" placeholder="Enter email" formControlName="email">
+      </div>
+      <div *ngIf="userFormGroup.get('email')!.dirty && userFormGroup.get('email')!.hasError('email')">
+        L'email n'est pas au bon format
+      </div>
+      <div class="form-group mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter phone" formControlName="phone">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="userFormGroup.invalid">Modifier un utilisateur</button>
+    </form>
+  </div>
+</div>
