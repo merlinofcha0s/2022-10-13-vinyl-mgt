@@ -44,4 +44,10 @@ export class VinylService {
     return this.vinyls;
   }
 
+  save(vinyl: Vinyl): Vinyl {
+    vinyl.id = this.vinyls.length;
+    this.vinyls.push(vinyl);
+    return vinyl;
+  }
+
 }
